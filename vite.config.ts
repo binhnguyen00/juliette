@@ -12,6 +12,7 @@ export default function viteConfig() {
       tsconfigPaths(),
       tailwindcss()
     ],
+    base: "/",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
@@ -22,6 +23,7 @@ export default function viteConfig() {
     build: {
       chunkSizeWarningLimit: 1000,
       emptyOutDir: true,
+      sourcemap: false,
       outDir: path.resolve(__dirname, "./dist"),
       rollupOptions: {
         output: {

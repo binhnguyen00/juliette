@@ -1,14 +1,21 @@
-FROM node:20-alpine
+FROM node:22-alpine AS builder
 
 WORKDIR /frontend
-
-USER root
 
 ENV CI=true
 
 COPY . .
+
 RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 RUN pnpm run build
 
-CMD ["pnpm", "run", "dev", "--host", "0.0.0.0", "--port", "2999"]
+FROM nginx:alpine
+
+COPY --from=builder /frontend/dist /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 2999
+
+CMD ["nginx", "-g", "daemon off;"]
