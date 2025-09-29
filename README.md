@@ -68,8 +68,9 @@ Build artifacts are generated in the `./dist` directory with optimized code spli
 ```
 ├── src/
 │   ├── components/       # Reusable UI components
-│   │   ├── Navbar.tsx
 │   │   ├── DefaultLayout.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Navbar.tsx
 │   │   └── index.ts
 │   ├── pages/            # Route page components
 │   │   ├── Home.tsx
