@@ -75,6 +75,8 @@ Build artifacts are generated in the `./dist` directory with optimized code spli
 ## 📁 Project Structure
 
 ```
+├── public/
+│   └── favicon.svg
 ├── src/
 │   ├── components/       # Reusable UI components
 │   │   ├── DefaultLayout.tsx
@@ -88,8 +90,9 @@ Build artifacts are generated in the `./dist` directory with optimized code spli
 │   ├── css/              # Global styles
 │   │   └── index.css
 │   ├── Application.tsx   # Route configuration
-│   ├── Index.tsx         # Application entry point
 │   └── Provider.tsx      # HeroUI provider configuration
+│   ├── index.tsx         # Application entry point
+├── index.html
 ├── vite.config.ts        # Vite configuration
 ├── tailwind.config.js    # TailwindCSS configuration
 ├── tsconfig.json         # TypeScript configuration
@@ -103,21 +106,9 @@ Build artifacts are generated in the `./dist` directory with optimized code spli
 Configured path aliases for cleaner imports:
 
 ```typescript
-import { Navbar, Button } from "@components";    // src/components
-import { Home, Page } from "@pages";              // src/pages
-import "@/css/index.css";                   // src/css/index.css
-```
-
-## 🐳 Docker Support
-
-Build and run with Docker:
-
-```bash
-# Build image
-docker build -t your-app-name .
-
-# Run container
-docker run -p 2999:2999 your-app-name
+import { Navbar, Button } from "@components";  // src/components
+import { Home, Page } from "@pages";           // src/pages
+import "@/css/index.css";                      // src/css/index.css
 ```
 
 ## 🎨 Features

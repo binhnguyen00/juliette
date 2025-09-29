@@ -12,7 +12,7 @@ export default function viteConfig() {
       tsconfigPaths(),
       tailwindcss()
     ],
-    base: "/",
+    base: "./",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
