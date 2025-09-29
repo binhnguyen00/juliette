@@ -12,7 +12,7 @@ export default function viteConfig() {
       tsconfigPaths(),
       tailwindcss()
     ],
-    base: "./",
+    base: "/",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
@@ -27,19 +27,25 @@ export default function viteConfig() {
       outDir: path.resolve(__dirname, "./dist"),
       rollupOptions: {
         output: {
-          manualChunks(id) { // split into chunks
+          manualChunks(id) {
             if (id.includes("node_modules")) {
-              if (id.includes("react-dom")) {
-                return "react-dom";
+              if (id.includes("react") || id.includes("scheduler")) {
+                return "react-vendor";
               }
-              if (id.includes("react-router-dom")) {
-                return "react-router-dom";
+              if (id.includes("react-router")) {
+                return "react-router";
               }
-              if (id.includes("react")) {
-                return "react";
+              if (id.includes("@heroui") || id.includes("framer-motion")) {
+                return "ui-vendor";
               }
+              if (id.includes("@tanstack") || id.includes("axios")) {
+                return "data-vendor";
+              }
+              if (id.includes("lucide-react")) {
+                return "icons";
+              }
+              return "vendor";
             }
-            return "vendor"
           }
         }
       }
