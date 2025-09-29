@@ -23,7 +23,7 @@ export default function viteConfig() {
     build: {
       chunkSizeWarningLimit: 1000,
       emptyOutDir: true,
-      sourcemap: false,
+      sourcemap: true,
       outDir: path.resolve(__dirname, "./dist"),
       rollupOptions: {
         output: {
