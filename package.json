@@ -26,7 +26,8 @@
     "@tailwindcss/vite": "latest",
     "@react-stately/data": "latest",
     "@react-types/shared": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "@tanstack/react-query": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
@@ -35,7 +36,6 @@
     "@types/react-router-dom": "latest",
     "@tailwindcss/postcss": "latest",
     "@vitejs/plugin-react": "latest",
-    "@tanstack/react-query": "latest",
     "autoprefixer": "latest",
     "globals": "latest",
     "postcss": "latest",

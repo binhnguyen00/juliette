@@ -4,10 +4,11 @@ WORKDIR /frontend
 
 ENV CI=true
 
-COPY . .
-
+COPY .npmrc* package.json ./
 RUN npm install -g pnpm
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
+
+COPY . .
 RUN pnpm run build
 
 FROM nginx:alpine
