@@ -80,7 +80,6 @@ Build artifacts are generated in the `./dist` directory with optimized code spli
 │   ├── Application.tsx   # Route configuration
 │   ├── Index.tsx         # Application entry point
 │   └── Provider.tsx      # HeroUI provider configuration
-├── public/               # Static assets
 ├── vite.config.ts        # Vite configuration
 ├── tailwind.config.js    # TailwindCSS configuration
 ├── tsconfig.json         # TypeScript configuration
