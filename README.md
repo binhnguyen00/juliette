@@ -41,20 +41,29 @@ A modern, production-ready React starter template featuring Vite for lightning-f
 pnpm install
 ```
 
-## 🏃 Development
-
-```bash
-pnpm run dev
-```
-
-The application will open automatically at `http://localhost:2999`
-
 ## 🏗️ Build
 
 ```bash
 pnpm run ts-check && \
 pnpm run build
 ```
+
+## 🏃 Development
+
+```bash
+pnpm run dev
+# or
+pnpm run preview
+```
+
+## 📱 Production
+
+```bash
+docker build -t your-app-name .
+docker run -p 2999:2999 your-app-name
+```
+
+The application will open automatically at `http://localhost:2999`
 
 Build artifacts are generated in the `./dist` directory with optimized code splitting:
 - `react.js` - React core
