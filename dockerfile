@@ -2,13 +2,15 @@ FROM node:22-alpine AS builder
 
 WORKDIR /frontend
 
+COPY .npmrc* package.json ./
+
 ENV CI=true
 
-COPY .npmrc* package.json ./
-RUN npm install -g pnpm
-RUN pnpm install
+RUN npm install -g pnpm && \
+  pnpm install
 
 COPY . .
+
 RUN pnpm run build
 
 FROM nginx:alpine
