@@ -13,13 +13,6 @@ export default function viteConfig() {
       tailwindcss()
     ],
     base: "./",
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src"),
-        "@pages": path.resolve(__dirname, "src/pages"),
-        "@components": path.resolve(__dirname, "src/components"),
-      }
-    },
     build: {
       chunkSizeWarningLimit: 1000,
       emptyOutDir: true,

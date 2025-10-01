@@ -8,10 +8,11 @@ import "@/css/index.css";
 import { App } from "@/Application";
 import { HeroUIProvider } from "@/Provider";
 
+const queryClient = new QueryClient();
+
 const container: HTMLElement | null = document.getElementById("root");
 if (container) {
   const root: Root = createRoot(container);
-  const queryClient = new QueryClient();
   root.render(
     <StrictMode>
       <BrowserRouter>
