@@ -20,14 +20,15 @@
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
+    "lucide-react": "latest",
     "framer-motion": "latest",
     "@heroui/react": "latest",
     "@heroui/use-infinite-scroll": "latest",
     "@tailwindcss/vite": "latest",
     "@react-stately/data": "latest",
     "@react-types/shared": "latest",
-    "lucide-react": "latest",
-    "@tanstack/react-query": "latest"
+    "@tanstack/react-query": "latest",
+    "@emotion/is-prop-valid": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
