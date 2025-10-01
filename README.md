@@ -1,4 +1,4 @@
-# React + Vite + TailwindCSS + HeroUI
+# Scaffold React + Vite + TailwindCSS + HeroUI
 
 A modern, production-ready React starter template featuring Vite for lightning-fast builds, TailwindCSS for utility-first styling, and HeroUI for beautiful pre-built components.
 
