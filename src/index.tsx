@@ -6,7 +6,7 @@ import type { Root } from "react-dom/client"
 
 import "@/css/index.css";
 import { App } from "@/Application";
-import { HeroUIProvider } from "@/Provider";
+import { Providers } from "@/src/Providers";
 
 const queryClient = new QueryClient();
 
@@ -16,11 +16,11 @@ if (container) {
   root.render(
     <StrictMode>
       <BrowserRouter>
-        <HeroUIProvider>
+        <Providers>
           <QueryClientProvider client={queryClient}>
             <App />
           </QueryClientProvider>
-        </HeroUIProvider>
+        </Providers>
       </BrowserRouter>
     </StrictMode>
   );
