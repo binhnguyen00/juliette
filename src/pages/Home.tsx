@@ -1,7 +1,8 @@
 import React from "react";
+import axios from "axios";
 
-import { Spinner, Button } from "@heroui/react";
 import { useQuery } from "@tanstack/react-query";
+import { Spinner, Button, Table, TableHeader, TableRow, TableBody, TableCell, TableColumn } from "@heroui/react";
 
 import { DefaultLayout } from "@components";
 
@@ -21,7 +22,7 @@ export function Home() {
 function MockUsers() {
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ["users"],
-    queryFn: () => fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json()),
+    queryFn: () => axios.get("https://jsonplaceholder.typicode.com/users").then((res) => res.data),
   });
 
   const [ users, setUsers ] = React.useState<any[]>([]);
@@ -38,12 +39,6 @@ function MockUsers() {
     if (data) setUsers(data);
   }, [data]);
 
-  if (isLoading) return (
-    <div className="w-full h-full flex flex-col justify-center items-center">
-      <Spinner size="lg"/>
-    </div>
-  );
-
   if (isError) return (
     <div className="w-full h-fullflex flex-col justify-center items-center">
       <p className="text-red-500">{error.message}</p>
@@ -52,37 +47,38 @@ function MockUsers() {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-start space-y-4">
-      <table className="min-w-full border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-        <thead className="bg-gray-100 text-gray-700 text-sm uppercase">
-          <tr>
-            <th className="px-4 py-2 text-left">No.</th>
-            <th className="px-4 py-2 text-left">Id</th>
-            <th className="px-4 py-2 text-left">Name</th>
-            <th className="px-4 py-2 text-left">Username</th>
-            <th className="px-4 py-2 text-left">Email</th>
-            <th className="px-4 py-2 text-left">Phone</th>
-            <th className="px-4 py-2 text-left">Website</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-gray-200 text-sm">
+      <Table 
+        aria-label="Mock Users"
+        classNames={{
+          table: "min-h-[400px] min-w-[600px]",
+        }}
+      >
+        <TableHeader>
+          <TableColumn> No. </TableColumn>
+          <TableColumn> Id </TableColumn>
+          <TableColumn> Name </TableColumn>
+          <TableColumn> Username </TableColumn>
+          <TableColumn> Email </TableColumn>
+          <TableColumn> Phone </TableColumn>
+          <TableColumn> Website </TableColumn>
+        </TableHeader>
+        <TableBody
+          isLoading={isLoading}
+          loadingContent={<Spinner label="Loading..." />}
+        >
           {users.map((user: any, i: number) => (
-            <tr
-              key={user.id}
-              className="hover:bg-gray-50 transition-colors duration-150"
-            >
-              <td className="px-4 py-2 font-medium text-gray-800">{i + 1}</td>
-              <td className="px-4 py-2 font-medium text-gray-800">{user.id}</td>
-              <td className="px-4 py-2">{user.name}</td>
-              <td className="px-4 py-2 text-gray-600">{user.username}</td>
-              <td className="px-4 py-2 text-blue-600 underline">{user.email}</td>
-              <td className="px-4 py-2 text-gray-700">{user.phone}</td>
-              <td className="px-4 py-2 text-blue-500 hover:underline cursor-pointer">
-                {user.website}
-              </td>
-            </tr>
+            <TableRow key={user.id}>
+              <TableCell>{i + 1}</TableCell>
+              <TableCell>{user.id}</TableCell>
+              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.username}</TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.phone}</TableCell>
+              <TableCell>{user.website}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
       <Button onPress={refresh} color="primary" size="md" className="self-end">
         Refresh
       </Button>
