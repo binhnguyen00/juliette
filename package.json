@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vite",
     "server": "vite",
+    "test": "vitest",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "ts-check": "tsc -b"
@@ -38,12 +39,15 @@
     "@types/react-router-dom": "latest",
     "@tailwindcss/postcss": "latest",
     "@vitejs/plugin-react": "latest",
+    "@testing-library/react": "latest",
     "autoprefixer": "latest",
     "globals": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "vite": "latest",
+    "vitest": "latest",
     "vite-tsconfig-paths": "latest",
+    "jsdom": "latest",
     "typescript": "latest"
   }
 }
