@@ -22,6 +22,7 @@
     "react-router-dom": "latest",
     "lucide-react": "latest",
     "framer-motion": "latest",
+    "react-stately": "latest",
     "@heroui/react": "latest",
     "@heroui/use-infinite-scroll": "latest",
     "@tailwindcss/vite": "latest",
