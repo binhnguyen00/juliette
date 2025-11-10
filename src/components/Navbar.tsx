@@ -8,7 +8,7 @@ import {
   NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@heroui/navbar";
 import { BotMessageSquare, CircleUserRound } from "lucide-react";
 
-export function Navbar() {
+export default function Navbar() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 

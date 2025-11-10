@@ -4,7 +4,7 @@ import { cn } from "@heroui/react";
 interface DefaultLayoutProps {
   children: React.ReactNode;
 }
-export function DefaultLayout(props: DefaultLayoutProps) {
+export default function DefaultLayout(props: DefaultLayoutProps) {
   const { children } = props;
 
   return (
