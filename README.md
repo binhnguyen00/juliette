@@ -67,13 +67,6 @@ docker run -p 2999:2999 your-app-name
 
 The application will open automatically at `http://localhost:2999`
 
-Build artifacts are generated in the `./dist` directory with optimized code splitting:
-- `react.js` - React core
-- `react-dom.js` - React DOM renderer
-- `react-router-dom.js` - Routing library
-- `vendor.js` - Other dependencies
-
-
 ## 📁 Project Structure
 
 ```
@@ -112,25 +105,6 @@ import { Navbar, Button } from "@components";  // src/components
 import { Home, Page } from "@pages";           // src/pages
 import "@/css/index.css";                      // src/css/index.css
 ```
-
-## 🎨 Features
-
-- **Lightning Fast HMR** - Instant hot module replacement with Vite
-- **Type Safety** - Full TypeScript support with strict mode
-- **Modern Styling** - TailwindCSS with dark mode support
-- **Code Splitting** - Optimized bundle splitting for better performance
-- **Component Library** - Pre-built accessible components with HeroUI
-- **Smart Caching** - Built-in data fetching and caching with TanStack Query
-- **Smooth Animations** - Production-ready animations with Framer Motion
-- **Responsive** - Mobile-first responsive design
-- **Dark Mode** - Built-in dark mode support
-
-## 📝 Code Style
-
-- 2-space indentation
-- TypeScript type hints required
-- No trailing spaces
-- Consistent function and class naming
 
 ## 📄 License
 
