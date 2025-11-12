@@ -24,6 +24,8 @@
     "lucide-react": "latest",
     "framer-motion": "latest",
     "react-stately": "latest",
+    "zustand": "latest",
+    "zod": "latest",
     "@heroui/react": "latest",
     "@heroui/use-infinite-scroll": "latest",
     "@tailwindcss/vite": "latest",
